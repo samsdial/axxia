@@ -1,0 +1,21 @@
+{{#each products}}
+    <div class="column is-half-mobile is-3-desktop">
+        <article class="box-article">
+            <figure class="box-article-img my-3">
+                <img src="{{img}}" class="is-fluidwidth" alt="">
+            </figure>
+            <div class="box-article-content">
+                <div class="content">
+                    <h2>
+                        <strong>{{name}}</strong>
+                    </h2>
+                    <p>
+                        {{description}}
+                    </p>
+                    <h3>$ {{price}}</h3>
+                </div>
+            </div>
+            <button class="button btn-primary is-light is-fullwidth">Agregar</button>
+        </article>
+    </div>
+{{/each}}

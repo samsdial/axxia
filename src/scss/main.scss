@@ -1,0 +1,266 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+
+$bodyColor: $white;
+$borderColor: gainsboro;
+$buttonColor: blue;
+$colorWhite: $white;
+$bgcWhite: $white;
+$colorBlack: $black;
+$bgcBlack: $black;
+
+body {
+    background: $bodyColor;
+}
+
+.box-article {
+    border: 1px solid $borderColor;
+    border-radius: 6px;
+    &-img {
+        display: block;
+        margin: 5px auto;
+    }
+    &-content {
+        display: inline-block;
+        width: 100%;
+        padding: 12px;
+        min-height: 199px;
+    }
+}
+
+.box-field {
+    padding: 12px
+}
+
+.box-help {
+    width: 45%; 
+    margin: auto;
+}
+.box-navbar {
+    display: flex;
+    .navbar-grow {
+        flex-grow: 1;
+    }
+}
+.navbar-item{
+    &:focus,
+    &:hover {
+        background-color: $bgcBlack !important;
+        color: $colorWhite !important;
+    }
+}
+
+.modal-filter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $bgcWhite;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+    }
+}
+
+.btn {
+    &-primary {
+        color: $buttonColor !important;
+        text-transform: uppercase;
+        font-weight: $weight-semibold;
+        border-top: 1.5px solid $borderColor !important;
+        padding: 25px;
+        border-radius: 0;
+        font-size: 19px;
+    }
+    &-second {
+        color: $colorWhite;
+    }
+    &-link {
+        color: $colorBlack;
+        text-transform: uppercase;
+        font-weight: $weight-semibold;
+    }
+    &-clean {
+        color: $colorBlack;
+        text-transform: uppercase;
+        font-weight: $weight-semibold;
+        padding: 25px;
+    }
+    &-filter {
+        color: $colorWhite;
+        text-transform: uppercase;
+        font-weight: $weight-semibold;
+        background-color: blue;
+        border: 1px solid blue;
+        padding: 25px;
+        .icon-btn {
+            svg {
+                fill: white;
+                vertical-align: middle;
+            }
+        }
+    }
+    &-social {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 50%; 
+        align-items: center;
+        background-color: blue;
+        justify-content: center;
+        margin: 0 auto;
+        svg {
+            fill: white;
+            vertical-align: middle;
+        }
+    }
+    &-help {
+        color: white;
+        .circle {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            border-radius: 50%; 
+            align-items: center;
+            background-color: white;
+            justify-content: center;
+            margin: 5px auto;
+            svg {
+                fill: black;
+                vertical-align: middle;
+            }
+        }
+    }
+    &-close {
+        padding: 15px;
+        background-color:white;
+        border: 2px solid #D1D7DC;
+        border-radius: 6px;
+        position: relative;
+        top: -29px;
+    }
+}
+
+.is-line {
+    width: 12%;
+    margin: 52px auto;
+    height: 2px;
+    background-color: #D1D7DC;
+}
+.is-bgc {
+    &-black {
+        background-color: $bgcBlack;
+    }
+    &-gray {
+        background-color: gainsboro;
+    }
+}
+.is-text {
+    &-white {
+        color: $colorWhite;
+    }
+}
+
+.list {
+    &-inline {
+        width: 100%;
+        display: table;
+        list-style: outside none none;
+        margin: 0 !important;
+        li { 
+            display: table-cell;
+            vertical-align: middle;
+            width: auto;
+            float: none;
+        }
+    }
+    &-block {
+        li { 
+            margin-bottom: 12px;
+        }
+    }
+    &-check {
+        li {
+            padding: 12px;
+            border-bottom: 1px solid gainsboro;
+        }
+    }
+}
+.inputGroup {
+    background-color: #fff;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+
+    label {
+        padding: 16px 6px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        color: #3C454C;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: color 200ms ease-in;
+        overflow: hidden;
+        border-bottom: 1px solid gainsboro;
+
+        &:after {
+        width: 32px;
+        height: 32px;
+        content: '';
+        border: 2px solid #D1D7DC;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: 2px 3px;
+        border-radius: 6px;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: all 200ms ease-in;
+        }
+    }
+
+    input:checked ~ label {
+        color: black;
+
+        &:before {
+        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+        opacity: 1;
+        }
+
+        &:after {
+        background-color: blue;
+        border-color: blue;
+        }
+    }
+
+    input {
+        width: 32px;
+        height: 32px;
+        order: 1;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        visibility: hidden;
+    }
+}
+
+.icon {
+    &-navbar {
+        svg {
+            fill: white;
+        }
+    }
+}
